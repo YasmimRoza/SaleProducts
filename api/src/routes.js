@@ -26,7 +26,7 @@ router.post(
   multer(multerConfig).array('files', 5),
   ImagesController.create
 );
-router.get('/imagelist/:productsId', ImagesController.searchImages);
-router.delete('/imagelist/:productsId', ImagesController.delete);
+router.get('/image/:productsId', ImagesController.searchImages);
+router.delete('/image/:productsId', ImagesController.delete);
 
 module.exports = router;
