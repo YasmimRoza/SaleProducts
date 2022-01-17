@@ -1,7 +1,12 @@
 const express = require('express');
 
-const app = express();
+const server = express();
 
-app.get('/aqui', (req, res) => res.json({ message: 'pegando caralho' }));
+const bodyParser = require('body-parser');
+const router = require('./routes');
 
-app.listen(3000, console.log('Server ON!'));
+server.use(bodyParser.json());
+
+server.use(router);
+
+server.listen(8000, console.log('Server on!'));
